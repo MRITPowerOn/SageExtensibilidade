@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using Sage50c.API;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers.CustomerHandler
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers.CustomerHandler
 {
     class CustomerHandler : IDisposable
     {
         private IManagementConsole _managementConsole = null;   //Consola de gestão dos parâmetros
         private ExtenderEvents _myEvents = null;
-        private FormCustomerTab _formTab = null;                     //Form das propriedades
+        private FormProjectScaffolding _formTab = null;                     //Form das propriedades
 
         public void SetEventHandler(ExtenderEvents e)
         {
@@ -129,7 +129,7 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.CustomerHandler
                 _managementConsole = (IManagementConsole)propertyList.get_Value("IManagementConsole");
 
                 // Form a colocar no TAB dos clientes
-                _formTab = new FormCustomerTab();
+                _formTab = new FormProjectScaffolding();
                 _managementConsole.AddChildPanel(_formTab);
             }
 

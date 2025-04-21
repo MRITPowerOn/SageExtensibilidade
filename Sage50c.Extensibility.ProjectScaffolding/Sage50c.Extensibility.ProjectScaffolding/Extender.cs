@@ -1,20 +1,20 @@
 ﻿using S50cBL22;
-using Sage50c.Extensibility.CustomerTab.Handlers.CustomerHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.SupplierHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.SalesmanHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.SystemHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.SaleTransactionHandler;
-using Sage50c.Extensibility.CustomerTab.Handlers.BuyTransactionHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.CustomerHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.SupplierHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.SalesmanHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.OtherContactHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.SystemHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.SaleTransactionHandler;
+using Sage50c.Extensibility.ProjectScaffolding.Handlers.BuyTransactionHandler;
 
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Sage50c.Extensibility.CustomerTab {
+namespace Sage50c.Extensibility.ProjectScaffolding {
 
-    [ProgId("Sage50c.Extensibility.CustomerTab")]
+    [ProgId("Sage50c.Extensibility.ProjectScaffolding")]
     public class Extender : ISageExtender, IDisposable {
         private SystemHandler systemHandler = null;       // System handler, startup, system menus
         //private SystemInfoHandler systemInfoHandler = null;   // Parâmetros do sistema

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Sage50c.Common;
 using S50cSys22;
 using S50cBO22;
-namespace Sage50c.Extensibility.CustomerTab.Handlers
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers
 {
     public partial class FormBuyTransactionTab : Form, IChildPanel
     {

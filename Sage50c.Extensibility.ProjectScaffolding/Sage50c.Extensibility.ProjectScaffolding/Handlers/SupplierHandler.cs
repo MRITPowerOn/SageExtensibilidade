@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using Sage50c.API;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers.SupplierHandler {
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers.SupplierHandler {
     class SupplierHandler : IDisposable {
         private IManagementConsole _managementConsole = null;   //Consola de gestão dos parâmetros
         private ExtenderEvents _myEvents = null;

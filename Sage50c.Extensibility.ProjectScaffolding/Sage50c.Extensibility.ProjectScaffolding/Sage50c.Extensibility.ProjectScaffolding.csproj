@@ -7,8 +7,8 @@
     <ProjectGuid>{AD99D614-EDF8-47F5-80F9-5274EAD9AD49}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sage50c.Extensibility.CustomerTab</RootNamespace>
-    <AssemblyName>Sage50c.Extensibility.CustomerTab</AssemblyName>
+    <RootNamespace>Sage50c.Extensibility.ProjectScaffolding</RootNamespace>
+    <AssemblyName>Sage50c.Extensibility.ProjectScaffolding</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <RegisterForComInterop>true</RegisterForComInterop>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -147,10 +147,6 @@
     </Reference>
     <Reference Include="SageCEMV15">
       <HintPath>..\..\Interops\SageCEMV15.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="SageCoreComm10">
-      <HintPath>..\..\Interops\SageCoreComm10.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="SageCoreLicenses30">

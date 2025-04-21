@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using Sage50c.API;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers.SaleTransactionHandler
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers.SaleTransactionHandler
 {
     class SaleTransactionHandler : IDisposable
     {

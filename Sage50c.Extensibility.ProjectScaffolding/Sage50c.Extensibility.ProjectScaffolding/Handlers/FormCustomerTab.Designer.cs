@@ -1,5 +1,5 @@
-﻿namespace Sage50c.Extensibility.CustomerTab.Handlers {
-    partial class FormOtherContactTab {
+﻿namespace Sage50c.Extensibility.ProjectScaffolding.Handlers {
+    partial class FormProjectScaffolding {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblOtherContact = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -32,30 +32,30 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblOtherContact);
+            this.panel1.Controls.Add(this.lblCustomerName);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(933, 588);
-            this.panel1.TabIndex = 11;
+            this.panel1.Size = new System.Drawing.Size(573, 367);
+            this.panel1.TabIndex = 10;
             // 
-            // lblOtherContact
+            // lblCustomerName
             // 
-            this.lblOtherContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblOtherContact.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblOtherContact.Location = new System.Drawing.Point(0, 0);
-            this.lblOtherContact.Name = "lblOtherContact";
-            this.lblOtherContact.Size = new System.Drawing.Size(931, 42);
-            this.lblOtherContact.TabIndex = 13;
-            this.lblOtherContact.Text = "Aqui vai aparecer o nome da entidade";
-            this.lblOtherContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCustomerName.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblCustomerName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCustomerName.Location = new System.Drawing.Point(0, 0);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(571, 32);
+            this.lblCustomerName.TabIndex = 12;
+            this.lblCustomerName.Text = "Aqui vai aparecer o nome da entidade";
+            this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(831, 541);
+            this.btnOk.Location = new System.Drawing.Point(470, 321);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(87, 30);
@@ -64,16 +64,18 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // FormOtherContactTab
+            // FormProjectScaffolding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 588);
+            this.ClientSize = new System.Drawing.Size(573, 367);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormOtherContactTab";
+            this.Name = "FormProjectScaffolding";
+            this.Text = "FormProjectScaffolding";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -82,7 +84,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Label lblOtherContact;
     }
 }

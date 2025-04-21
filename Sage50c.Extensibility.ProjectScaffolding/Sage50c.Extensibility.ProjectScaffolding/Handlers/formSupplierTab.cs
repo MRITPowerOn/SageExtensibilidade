@@ -1,4 +1,6 @@
 ﻿using S50cBL22;
+using S50cBO22;
+using Sage50c.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,13 +9,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Sage50c.Common;
-using S50cBO22;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers {
-    public partial class FormCustomerTab : Form, IChildPanel {
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers {
+    public partial class FormSupplierTab : Form, IChildPanel {
 
-        public FormCustomerTab() {
+        public FormSupplierTab() {
             InitializeComponent();
         }
 
@@ -30,9 +30,9 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
         }
 
         public void ResetInterface() {
-            lblCustomerName.Text = string.Empty;
+            lblSupplierName.Text = string.Empty;
         }
-
+        
         public void SetFocus() {
             try {
                 this.SetFocus();
@@ -44,10 +44,10 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
             return false;
         }
 
-        public void OnLoad(Customer value) {
+        public void OnLoad(Supplier value) {
 
             if (value != null) {
-                lblCustomerName.Text = value.OrganizationName;
+                lblSupplierName.Text = value.OrganizationName;
             }
         }
 
@@ -83,5 +83,6 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
             MessageBox.Show("Hello!");
         }
 
-        }
     }
+
+}

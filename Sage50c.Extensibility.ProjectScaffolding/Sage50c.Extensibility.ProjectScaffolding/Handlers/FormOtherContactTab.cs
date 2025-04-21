@@ -1,19 +1,18 @@
 ﻿using S50cBL22;
 using S50cBO22;
-using Sage50c.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-//using System.Drawing;
+//using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers {
-    public partial class FormSupplierTab : Form, IChildPanel {
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers {
+    public partial class FormOtherContactTab : Form, IChildPanel {
 
-        public FormSupplierTab() {
+        public FormOtherContactTab() {
             InitializeComponent();
         }
 
@@ -25,14 +24,16 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
 
                 this.SetBounds(0, 0, tabWidth, tabHeight);
 
+                //this.Visible = true;
+                //this.BringToFront();
             }
             catch { }
         }
 
         public void ResetInterface() {
-            lblSupplierName.Text = string.Empty;
+            lblOtherContact.Text = string.Empty;
         }
-        
+
         public void SetFocus() {
             try {
                 this.SetFocus();
@@ -44,10 +45,10 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
             return false;
         }
 
-        public void OnLoad(Supplier value) {
+        public void OnLoad(OtherContact value) {
 
             if (value != null) {
-                lblSupplierName.Text = value.OrganizationName;
+                lblOtherContact.Text = value.Name;
             }
         }
 
@@ -71,8 +72,8 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
 
         public stdole.StdPicture Picture {
             get {
-                //return null;
-                return (stdole.StdPicture)ImageConverter.GetIPictureDispFromImage(Icon.ToBitmap());
+                return null;
+                //return (stdole.StdPicture)ImageConverter.GetIPictureDispFromImage(Icon.ToBitmap());
             }
         }
         public string Title => "Custom panel";
@@ -84,5 +85,4 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers {
         }
 
     }
-
 }

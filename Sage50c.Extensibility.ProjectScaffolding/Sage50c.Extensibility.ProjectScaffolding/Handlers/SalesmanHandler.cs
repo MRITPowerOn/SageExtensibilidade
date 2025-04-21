@@ -7,21 +7,21 @@ using System.Linq;
 using System.Text;
 using Sage50c.API;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
-    class OtherContactHandler : IDisposable {
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers.SalesmanHandler {
+    class SalesmanHandler : IDisposable {
         private IManagementConsole _managementConsole = null;   //Consola de gestão dos parâmetros
         private ExtenderEvents _myEvents = null;
-        private FormOtherContactTab _formTab = null;                     //Form das propriedades
+        private FormSalesmanTab _formTab = null;                     //Form das propriedades
 
         public void SetEventHandler(ExtenderEvents e) {
             _myEvents = e;
 
-            _myEvents.OnDelete += myEvents_OnDelete;         // Delete  OtherConctact
+            _myEvents.OnDelete += myEvents_OnDelete;         // Delete  Salesman
             _myEvents.OnDispose += myEvents_OnDispose;       // Limpar recursos
             _myEvents.OnInitialize += myEvents_OnInitialize; // Inicializar, adicionar menus de utilizador
             _myEvents.OnLoad += myEvents_OnLoad;             // Ao carregar um artigo e preencher o form. Pode ser cancelado
             _myEvents.OnMenuItem += myEvents_OnMenuItem;     // Menu do utilizador foi pressionado
-            _myEvents.OnNew += myEvents_OnNew;               // Novo  OtherConctact
+            _myEvents.OnNew += myEvents_OnNew;               // Novo  Salesman
             _myEvents.OnSave += myEvents_OnSave;             // Gravar Items
             _myEvents.OnValidating += myEvents_OnValidating; // Validar. Pode ser cancelado.
 
@@ -34,7 +34,7 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// <param name="e">
         /// IN:
         ///     e.get_Data(): ExtendedPropertyList
-        ///         "Data":  OtherConctact
+        ///         "Data":  Salesman
         ///         "PreviousID": Identificador anterior (ItemId). Pode não estar presente
         ///         "IsNew": O Artigo é novo
         ///    
@@ -44,7 +44,7 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// </param>
         void myEvents_OnSave(object Sender, ExtenderEventArgs e) {
             var proplist = (ExtendedPropertyList)e.get_data();
-            var OtherContact = (OtherContact)proplist.get_Value("Data");    // The  OtherContact
+            var Salesman = (Salesman)proplist.get_Value("Data");    // The  Salesman
             var isNew = (bool)proplist.get_Value("IsNew");  // Is new?
         }
 
@@ -63,12 +63,12 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
             var menuId = (string)e.get_data();
 
             switch (menuId) {
-                case "mniXOtherContact1":
-                    System.Windows.Forms.MessageBox.Show("Pressionei  OtherContact 1");
+                case "mniXSalesman1":
+                    System.Windows.Forms.MessageBox.Show("Pressionei  Salesman 1");
                     break;
 
-                case "mniXOtherContact2":
-                    System.Windows.Forms.MessageBox.Show("Pressionei  OtherContact 2");
+                case "mniXSalesman2":
+                    System.Windows.Forms.MessageBox.Show("Pressionei  Salesman 2");
                     break;
             }
         }
@@ -79,23 +79,22 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// <param name="Sender">GenericExtensibilityController</param>
         /// <param name="e">
         /// IN:
-        ///     e.get_Data():  OtherContact
+        ///     e.get_Data():  Salesman
         ///     
         /// OUT:
         ///     Sucess: true or false
         ///     ResultMessage: caso preenchida, apresenta a mensagem
         /// </param>
         void myEvents_OnLoad(object Sender, ExtenderEventArgs e) {
-            var OtherContact = (OtherContact)e.get_data();
+            var Salesman = (Salesman)e.get_data();
 
-            if (OtherContact != null) {
-                _formTab.OnLoad(OtherContact);
+            if (Salesman != null) {
+                _formTab.OnLoad(Salesman);
             }
         }
-
-
+        
         /// <summary>
-        /// Inicializa a extensão nos Artigos ( OtherContact)
+        /// Inicializa a extensão nos Artigos ( Salesman)
         /// Não mostra mensagens
         /// </summary>
         /// <param name="Sender"></param>
@@ -117,8 +116,8 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
             if (propertyList.PropertyExists("IManagementConsole")) {
                 _managementConsole = (IManagementConsole)propertyList.get_Value("IManagementConsole");
 
-                // Form a colocar no TAB dos Outros Devedores/Credores
-                _formTab = new FormOtherContactTab();
+                // Form a colocar no TAB dos vendedores
+                _formTab = new FormSalesmanTab();
                 _managementConsole.AddChildPanel(_formTab);
             }
 
@@ -129,10 +128,10 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
             menuGroup.GroupType = ExtenderGroupType.ExtenderGroupTypeExtraOptions;   //Opções de menu
             menuGroup.BeginGroup = true;                                             //Novo grupo
             //
-            var menuItem = menuGroup.ChildItems.Add("mniXOtherContact1", "Meu menu 1");
+            var menuItem = menuGroup.ChildItems.Add("mniXSalesman1", "Meu menu 1");
             menuItem.GroupType = ExtenderGroupType.ExtenderGroupTypeExtraOptions;   //Opções de menu
 
-            menuItem = menuGroup.ChildItems.Add("mniXOtherContact2", "Meu menu 2");
+            menuItem = menuGroup.ChildItems.Add("mniXSalesman2", "Meu menu 2");
             menuItem.GroupType = ExtenderGroupType.ExtenderGroupTypeExtraOptions;   //Opções de menu
 
             object oMenu = newMenu;
@@ -160,14 +159,14 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// Chamado quando o artigo vai ser eliminado
         /// </summary>
         /// <param name="Sender">GenericExtensibilityController</param>
-        /// <param name="e">e.get_Data():  OtherContact</param>
+        /// <param name="e">e.get_Data():  Salesman</param>
         void myEvents_OnDelete(object Sender, ExtenderEventArgs e) {
         }
 
         /// <summary>
         /// Ocorre ao criar um artigo novo
         /// IN:
-        ///     e.get_data():  OtherContact a ser criado. Pode ser alterado
+        ///     e.get_data():  Salesman a ser criado. Pode ser alterado
         /// 
         /// OUT:
         ///     e.result.ResultMessage: Mensagem a apresentar ao utilizador. Se vazia, não mostra nada
@@ -176,15 +175,15 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// <param name="Sender">ExtensibilityController</param>
         /// <param name="e">Event parameters</param>
         void myEvents_OnNew(object Sender, ExtenderEventArgs e) {
-            var otherContact = (OtherContact)e.get_data();
+            var salesman = (Salesman)e.get_data();
 
             _formTab.ResetInterface();
 
-            //otherContact.Name  = "My name";
+            //salesman.Name = "My name";
             //e.result.ResultMessage = "O nome foi alterado.";
             //e.result.Success = true;
 
-            //e.result.ResultMessage = "New Event: Estou a criar um outro devedor/credor novo";
+            //e.result.ResultMessage = "New Event: Estou a criar um vendedor novo";
             e.result.Success = true;
         }
 
@@ -195,8 +194,8 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// <param name="e">
         /// IN:
         ///  e.get_Data(): ExtendedPropertyList
-        ///     "Data":  OtherContact,
-        ///     "ForDeletion": bool que indica se o  OtherContact vai ser apagado
+        ///     "Data":  Salesman,
+        ///     "ForDeletion": bool que indica se o  Salesman vai ser apagado
         ///
         /// OUT:
         ///     result.Success: true para continuar; false para falhar a validação
@@ -204,19 +203,20 @@ namespace Sage50c.Extensibility.CustomerTab.Handlers.OtherContactHandler {
         /// </param>
         void myEvents_OnValidating(object Sender, ExtenderEventArgs e) {
             var proplist = (ExtendedPropertyList)e.get_data();
-            var OtherContact = (OtherContact)proplist.get_Value("Data");
+            var Salesman = (Salesman)proplist.get_Value("Data");
             var forDeletion = (bool)proplist.get_Value("ForDeletion");
 
             e.result.Success = true;
-    }
+
+        }
 
         public void Dispose() {
+            // House cleanup
             _myEvents = null;
             if (_formTab != null) {
                 _formTab.Dispose();
                 _formTab = null;
             }
-            // House cleanup
         }
     }
 }

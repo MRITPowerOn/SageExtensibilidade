@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Sage50c.Extensibility.CustomerTab.Handlers.SystemHandler {
+namespace Sage50c.Extensibility.ProjectScaffolding.Handlers.SystemHandler {
     class SystemHandler {
         // System events handler
         private ExtenderSystemEvents myEvents = null;

@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sage50c.Extensibility.CustomerTab")]
-[assembly: AssemblyDescription("Sage 50c Extensibility CustomerTab")]
+[assembly: AssemblyTitle("Sage50c.Extensibility.ProjectScaffolding")]
+[assembly: AssemblyDescription("Sage 50c Extensibility ProjectScaffolding")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sage Portugal")]
 [assembly: AssemblyProduct("Sage 50c")]
